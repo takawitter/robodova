@@ -29,6 +29,6 @@ public class CDVPlugin extends NSObject{
 		CDVCommandDelegateImpl.class.getName();
 	}
 
-	@Property(selector = "commandDelegate")
+	@Property(selector="commandDelegate")
 	public native CDVCommandDelegate getCommandDelegate();
 }
