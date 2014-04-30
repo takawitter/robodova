@@ -15,6 +15,7 @@
  */
 package jp.takawitter.robodova.cordova;
 
+import org.robovm.apple.foundation.NSArray;
 import org.robovm.apple.foundation.NSObject;
 import org.robovm.objc.ObjCRuntime;
 import org.robovm.objc.annotation.Method;
@@ -31,4 +32,8 @@ public class CDVPluginResult extends NSObject{
 	@Method(selector="resultWithStatus:messageAsString:")
 	public native static CDVPluginResult resultWithStatus(
 			CDVCommandStatus status, String message);
+
+	@Method(selector="resultWithStatus:messageAsArray:")
+	public native static CDVPluginResult resultWithStatus(
+			CDVCommandStatus status, NSArray<?> message);
 }
