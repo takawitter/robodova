@@ -26,10 +26,15 @@ import org.robovm.objc.annotation.Method;
 @CustomClass("RDVSamplePlugin")
 public class SamplePlugin extends CDVPlugin{
 	@Method
-	public void hello(CDVInvokedUrlCommand command){
-		String arg = command.getArguments().get(0).toString();
-		getCommandDelegate().sendPluginResult(
-				CDVPluginResult.resultWithStatus(CDVCommandStatus.OK, arg),
-				command.getCallbackId());
+	public void hello(final CDVInvokedUrlCommand command){
+		getCommandDelegate().runInBackground(new Runnable() {
+			@Override
+			public void run() {
+				String arg = command.getArguments().get(0).toString();
+				getCommandDelegate().sendPluginResult(
+						CDVPluginResult.resultWithStatus(CDVCommandStatus.OK, arg),
+						command.getCallbackId());
+			}
+		});
 	}
 }

@@ -16,6 +16,7 @@
 package jp.takawitter.robodova.cordova;
 
 import org.robovm.apple.foundation.NSObjectProtocol;
+import org.robovm.objc.annotation.Block;
 import org.robovm.objc.annotation.Method;
 import org.robovm.objc.annotation.NativeClass;
 import org.robovm.rt.bro.annotation.Library;
@@ -25,4 +26,7 @@ import org.robovm.rt.bro.annotation.Library;
 public interface CDVCommandDelegate extends NSObjectProtocol{
 	@Method(selector="sendPluginResult:callbackId:")
 	void sendPluginResult(CDVPluginResult result, String callbackId);
+
+	@Method(selector="runInBackground:")
+	void runInBackground(@Block Runnable runnable);
 }

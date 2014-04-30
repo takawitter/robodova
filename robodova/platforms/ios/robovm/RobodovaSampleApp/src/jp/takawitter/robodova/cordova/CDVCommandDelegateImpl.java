@@ -17,6 +17,7 @@ package jp.takawitter.robodova.cordova;
 
 import org.robovm.apple.foundation.NSObject;
 import org.robovm.objc.ObjCRuntime;
+import org.robovm.objc.annotation.Block;
 import org.robovm.objc.annotation.Method;
 import org.robovm.objc.annotation.NativeClass;
 import org.robovm.rt.bro.annotation.Library;
@@ -32,4 +33,7 @@ implements CDVCommandDelegate{
 
 	@Method(selector="sendPluginResult:callbackId:")
 	public native void sendPluginResult(CDVPluginResult result, String callbackId);
+
+	@Method(selector="runInBackground:")
+	public native void runInBackground(@Block Runnable runnable);
 }
