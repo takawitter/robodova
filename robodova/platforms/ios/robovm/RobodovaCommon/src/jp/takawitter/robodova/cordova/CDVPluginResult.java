@@ -30,6 +30,10 @@ public class CDVPluginResult extends NSObject{
 		ObjCRuntime.bind(CDVPluginResult.class);
 	}
 
+	@Method(selector="resultWithStatus:")
+	public native static CDVPluginResult resultWithStatus(
+			CDVCommandStatus status);
+
 	@Method(selector="resultWithStatus:messageAsString:")
 	public native static CDVPluginResult resultWithStatus(
 			CDVCommandStatus status, String message);
