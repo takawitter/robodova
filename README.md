@@ -73,7 +73,7 @@ public class SamplePlugin extends CDVPlugin{
 Some restrictions
 ========
 * You have to register plugin class before start UIApplication.
-   ```java
+```java
 		NSAutoreleasePool pool = new NSAutoreleasePool();
 		try{
 			/* when using apt, the name of plugin class will be original class name plus "_" */
@@ -82,4 +82,4 @@ Some restrictions
 		} finally{
 			pool.close();
 		}
-   ```
+```
