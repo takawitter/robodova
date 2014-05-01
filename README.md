@@ -1,4 +1,4 @@
 robodova
 ========
 
-Cordova bindings for RoboVM.
+Cordova bindings and annotation processing tool for RoboVM.
