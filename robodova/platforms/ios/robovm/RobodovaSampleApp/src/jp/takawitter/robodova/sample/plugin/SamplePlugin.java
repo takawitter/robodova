@@ -30,10 +30,12 @@ public class SamplePlugin extends CDVPlugin{
 		getCommandDelegate().runInBackground(new Runnable() {
 			@Override
 			public void run() {
-				String arg = command.getArguments().get(0).toString();
 				getCommandDelegate().sendPluginResult(
-						CDVPluginResult.resultWithStatus(CDVCommandStatus.OK, arg),
-						command.getCallbackId());
+					CDVPluginResult.resultWithStatus(
+						CDVCommandStatus.OK,
+						"hello" + command.getArguments().get(0).toString()
+						),
+					command.getCallbackId());
 			}
 		});
 	}
