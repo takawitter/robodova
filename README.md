@@ -29,15 +29,15 @@ Cordova bindings and annotation processing tool for RoboVM. Robodova is licensed
 
 4. Run sample application (with apt)
 --------
-  * Right-click RobodovaSampleAppWithApt/libs-apt/*.jardesc and select Create Jar
-  * Clear (rebuild) the project
-  * Right-click RobodovaSampleAppWithApt project and select Run As -> iOS Simulator App
+  * Right-click RobodovaSampleAppWithApt/libs-apt/*.jardesc and select Create Jar.
+  * Clear (rebuild) the project.
+  * Right-click RobodovaSampleAppWithApt project and select Run As -> iOS Simulator App.
   
   The same window as RobodovaSampleApp appeard if you successfully setup and run.
 
 With or without apt
 ========
-Without apt, you have to write cordova dependent code when you develop plugin as follows:
+Without apt, you have to write cordova dependent code when you develop a plugin.
 ```java
 @CustomClass("RDVSamplePlugin")
 public class SamplePlugin extends CDVPlugin{
