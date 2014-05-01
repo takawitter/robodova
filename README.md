@@ -21,7 +21,7 @@ Cordova bindings and annotation processing tool for RoboVM. Robodova is licensed
 
 3. Run sample application
 --------
-  Before run, you must do setup and be sure Xcode ran once at your system.
+  Before run, be sure Xcode ran once at your system.
   * Right-click RobodovaSampleApp project and select Run As -> iOS Simulator App
   
   The following window appeard if you successfully setup and run.
@@ -29,7 +29,6 @@ Cordova bindings and annotation processing tool for RoboVM. Robodova is licensed
 
 4. Run sample application (with apt)
 --------
-  Before run, be sure Xcode ran once at your system.
   * Right-click RobodovaSampleAppWithApt/libs-apt/*.jardesc and select Create Jar
   * Clear (rebuild) the project
   * Right-click RobodovaSampleAppWithApt project and select Run As -> iOS Simulator App
