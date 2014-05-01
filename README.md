@@ -1,7 +1,7 @@
-robodova
+Robodova
 ========
 
-Cordova bindings and annotation processing tool for RoboVM.
+Cordova bindings and annotation processing tool for RoboVM. Robodova is licensed under Apache License 2.0.
 
 1. Setup
 --------
@@ -69,3 +69,17 @@ public class SamplePlugin extends CDVPlugin{
 	}
 }
 ```
+
+Some restrictions
+========
+* You have to register plugin class before start UIApplication.
+   ```java
+		NSAutoreleasePool pool = new NSAutoreleasePool();
+		try{
+			/* when using apt, the name of plugin class will be original class name plus "_" */
+			ObjCClass.registerCustomClass(SamplePlugin_.class);
+			UIApplication.main(args, null, AppDelegate.class);
+		} finally{
+			pool.close();
+		}
+   ```
