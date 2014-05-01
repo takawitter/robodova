@@ -16,6 +16,7 @@
 package jp.takawitter.robodova.cordova;
 
 import org.robovm.apple.foundation.NSObject;
+import org.robovm.apple.uikit.UIWebView;
 import org.robovm.objc.ObjCRuntime;
 import org.robovm.objc.annotation.NativeClass;
 import org.robovm.objc.annotation.Property;
@@ -28,6 +29,9 @@ public class CDVPlugin extends NSObject{
 		ObjCRuntime.bind(CDVPlugin.class);
 		CDVCommandDelegateImpl.class.getName();
 	}
+
+	@Property(selector="webView")
+	public native UIWebView getWebView();
 
 	@Property(selector="commandDelegate")
 	public native CDVCommandDelegate getCommandDelegate();
