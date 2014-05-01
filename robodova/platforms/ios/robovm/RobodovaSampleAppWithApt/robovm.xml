@@ -1,0 +1,20 @@
+<config>
+  <executableName>${app.executable}</executableName>
+  <mainClass>${app.mainclass}</mainClass>
+  <os>ios</os>
+  <arch>thumbv7</arch>
+  <libs>
+    <lib>libs/libRobodova.a</lib>
+  </libs>
+  <frameworks>
+    <framework>Foundation</framework>
+    <framework>UIKit</framework>
+  </frameworks>
+  <resources>
+    <resource>
+      <directory>resources</directory>
+    </resource>
+  </resources>
+  <target>ios</target>
+  <iosInfoPList>Info.plist.xml</iosInfoPList>
+</config>
