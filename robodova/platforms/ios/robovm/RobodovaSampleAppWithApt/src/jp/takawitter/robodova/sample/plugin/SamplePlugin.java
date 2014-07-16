@@ -34,7 +34,7 @@ public class SamplePlugin extends CDVPlugin{
 		return "hello " + name;
 	}
 
-	@PluginMethod()
+	@PluginMethod
 	public List<String> hellos(String name){
 		return Arrays.asList(
 				"hello " + name,
@@ -42,7 +42,7 @@ public class SamplePlugin extends CDVPlugin{
 				);
 	}
 
-	@PluginMethod()
+	@PluginMethod
 	public void hello4(){
 		
 	}
