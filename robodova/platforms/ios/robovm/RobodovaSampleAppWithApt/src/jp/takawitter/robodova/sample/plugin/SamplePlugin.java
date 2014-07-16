@@ -20,10 +20,9 @@ import java.util.List;
 
 import jp.takawitter.robodova.annotation.PluginClass;
 import jp.takawitter.robodova.annotation.PluginMethod;
-import jp.takawitter.robodova.cordova.CDVPlugin;
 
 @PluginClass("RDVSamplePlugin")
-public class SamplePlugin extends CDVPlugin{
+public class SamplePlugin{
 	@PluginMethod
 	public String hello(String name){
 		return "hello " + name;
@@ -40,10 +39,5 @@ public class SamplePlugin extends CDVPlugin{
 				"hello " + name,
 				"goodmorning " + name
 				);
-	}
-
-	@PluginMethod()
-	public void hello4(){
-		
 	}
 }
