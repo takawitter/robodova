@@ -127,6 +127,7 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 				p.println("@Override");
 				p.println("public void run() {").indent();
 			}
+			p.println("try{").indent();
 			boolean voidReturn = ee.getReturnType().getKind().equals(TypeKind.VOID);
 			if(!voidReturn){
 				p.println("getCommandDelegate().sendPluginResult(").indent();
@@ -154,11 +155,21 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 				p.unindent().println("),");
 			}
 			p.println("command.getCallbackId());").unindent().unindent();
+			p.println("} catch(Exception e){").indent();
+			p.println("if(e instanceof RuntimeException){").indent();
+			p.println("throw (RuntimeException)e;");
+			p.unindent().println("}");
+			p.println("getCommandDelegate().sendPluginResult(").indent();
+			p.println("CDVPluginResult.resultWithStatus(").indent();
+			p.println("CDVCommandStatus.Error, e.toString().replaceAll(\"\\\"\", \"\\\\\\\"\").replaceAll(\"\\r\", \"\\\\r\").replaceAll(\"\\n\", \"\\\\n\")");
+			p.unindent().println("),");
+			p.println("command.getCallbackId());").unindent();
+			p.unindent().println("}");
 			if(pm.async()){
-				p.println("}").unindent();
-				p.println("});").unindent();
+				p.unindent().println("}");
+				p.unindent().println("});");
 			}
-			p.println("}");
+			p.unindent().println("}");
 			p.unindent().println();
 		}
 	}
