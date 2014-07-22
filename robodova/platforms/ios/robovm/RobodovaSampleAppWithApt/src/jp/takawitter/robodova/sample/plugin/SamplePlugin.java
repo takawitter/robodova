@@ -33,7 +33,7 @@ public class SamplePlugin{
 		return "hello " + name;
 	}
 
-	@PluginMethod()
+	@PluginMethod
 	public List<String> hellos(String name){
 		return Arrays.asList(
 				"hello " + name,
