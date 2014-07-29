@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD3EE8B0190E760B00537B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3EE8AF190E760B00537B6C /* Foundation.framework */; };
+		DD3EE8BE190E760C00537B6C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3EE8BD190E760C00537B6C /* XCTest.framework */; };
+		DD3EE8BF190E760C00537B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3EE8AF190E760B00537B6C /* Foundation.framework */; };
+		DD3EE8C1190E760C00537B6C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3EE8C0190E760C00537B6C /* UIKit.framework */; };
+		DD3EE8C4190E760C00537B6C /* libRobodova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3EE8AC190E760B00537B6C /* libRobodova.a */; };
+		DD3EE8CA190E760C00537B6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD3EE8C8190E760C00537B6C /* InfoPlist.strings */; };
+		DD3EE903190E765800537B6C /* CDVCommandDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8DA190E765800537B6C /* CDVCommandDelegateImpl.m */; };
+		DD3EE904190E765800537B6C /* CDVCommandQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8DC190E765800537B6C /* CDVCommandQueue.m */; };
+		DD3EE905190E765800537B6C /* CDVConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8DE190E765800537B6C /* CDVConfigParser.m */; };
+		DD3EE906190E765800537B6C /* CDVInvokedUrlCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8E1190E765800537B6C /* CDVInvokedUrlCommand.m */; };
+		DD3EE907190E765800537B6C /* CDVJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8E3190E765800537B6C /* CDVJSON.m */; };
+		DD3EE908190E765800537B6C /* CDVLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8E5190E765800537B6C /* CDVLocalStorage.m */; };
+		DD3EE909190E765800537B6C /* CDVPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8E7190E765800537B6C /* CDVPlugin.m */; };
+		DD3EE90A190E765800537B6C /* CDVPluginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8E9190E765800537B6C /* CDVPluginResult.m */; };
+		DD3EE90B190E765800537B6C /* CDVShared.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8EC190E765800537B6C /* CDVShared.m */; };
+		DD3EE90C190E765800537B6C /* CDVTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8EE190E765800537B6C /* CDVTimer.m */; };
+		DD3EE90D190E765800537B6C /* CDVURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8F0190E765800537B6C /* CDVURLProtocol.m */; };
+		DD3EE90E190E765800537B6C /* CDVUserAgentUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8F2190E765800537B6C /* CDVUserAgentUtil.m */; };
+		DD3EE90F190E765800537B6C /* CDVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8F4190E765800537B6C /* CDVViewController.m */; };
+		DD3EE910190E765800537B6C /* CDVWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8F6190E765800537B6C /* CDVWebViewDelegate.m */; };
+		DD3EE911190E765800537B6C /* CDVWhitelist.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8F8190E765800537B6C /* CDVWhitelist.m */; };
+		DD3EE912190E765800537B6C /* NSArray+Comparisons.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8FA190E765800537B6C /* NSArray+Comparisons.m */; };
+		DD3EE913190E765800537B6C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8FC190E765800537B6C /* NSData+Base64.m */; };
+		DD3EE914190E765800537B6C /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE8FE190E765800537B6C /* NSDictionary+Extensions.m */; };
+		DD3EE915190E765800537B6C /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE900190E765800537B6C /* NSMutableArray+QueueAdditions.m */; };
+		DD3EE916190E765800537B6C /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE902190E765800537B6C /* UIDevice+Extensions.m */; };
+		DD3EE925190E768C00537B6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE921190E768C00537B6C /* AppDelegate.m */; };
+		DD3EE926190E768C00537B6C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3EE923190E768C00537B6C /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD3EE8C2190E760C00537B6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD3EE8A4190E760B00537B6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD3EE8AB190E760B00537B6C;
+			remoteInfo = RobodovaLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD3EE8AA190E760B00537B6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DD3EE8AC190E760B00537B6C /* libRobodova.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRobodova.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3EE8AF190E760B00537B6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DD3EE8B3190E760B00537B6C /* RobodovaLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobodovaLib-Prefix.pch"; sourceTree = "<group>"; };
+		DD3EE8BC190E760C00537B6C /* RobodovaLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobodovaLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3EE8BD190E760C00537B6C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DD3EE8C0190E760C00537B6C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DD3EE8C7190E760C00537B6C /* RobodovaLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RobodovaLibTests-Info.plist"; sourceTree = "<group>"; };
+		DD3EE8C9190E760C00537B6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD3EE8D6190E765800537B6C /* CDV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDV.h; path = ../CordovaLib/Classes/CDV.h; sourceTree = "<group>"; };
+		DD3EE8D7190E765800537B6C /* CDVAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAvailability.h; path = ../CordovaLib/Classes/CDVAvailability.h; sourceTree = "<group>"; };
+		DD3EE8D8190E765800537B6C /* CDVCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCommandDelegate.h; path = ../CordovaLib/Classes/CDVCommandDelegate.h; sourceTree = "<group>"; };
+		DD3EE8D9190E765800537B6C /* CDVCommandDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCommandDelegateImpl.h; path = ../CordovaLib/Classes/CDVCommandDelegateImpl.h; sourceTree = "<group>"; };
+		DD3EE8DA190E765800537B6C /* CDVCommandDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCommandDelegateImpl.m; path = ../CordovaLib/Classes/CDVCommandDelegateImpl.m; sourceTree = "<group>"; };
+		DD3EE8DB190E765800537B6C /* CDVCommandQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCommandQueue.h; path = ../CordovaLib/Classes/CDVCommandQueue.h; sourceTree = "<group>"; };
+		DD3EE8DC190E765800537B6C /* CDVCommandQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCommandQueue.m; path = ../CordovaLib/Classes/CDVCommandQueue.m; sourceTree = "<group>"; };
+		DD3EE8DD190E765800537B6C /* CDVConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVConfigParser.h; path = ../CordovaLib/Classes/CDVConfigParser.h; sourceTree = "<group>"; };
+		DD3EE8DE190E765800537B6C /* CDVConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVConfigParser.m; path = ../CordovaLib/Classes/CDVConfigParser.m; sourceTree = "<group>"; };
+		DD3EE8DF190E765800537B6C /* CDVDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVDebug.h; path = ../CordovaLib/Classes/CDVDebug.h; sourceTree = "<group>"; };
+		DD3EE8E0190E765800537B6C /* CDVInvokedUrlCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInvokedUrlCommand.h; path = ../CordovaLib/Classes/CDVInvokedUrlCommand.h; sourceTree = "<group>"; };
+		DD3EE8E1190E765800537B6C /* CDVInvokedUrlCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVInvokedUrlCommand.m; path = ../CordovaLib/Classes/CDVInvokedUrlCommand.m; sourceTree = "<group>"; };
+		DD3EE8E2190E765800537B6C /* CDVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVJSON.h; path = ../CordovaLib/Classes/CDVJSON.h; sourceTree = "<group>"; };
+		DD3EE8E3190E765800537B6C /* CDVJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVJSON.m; path = ../CordovaLib/Classes/CDVJSON.m; sourceTree = "<group>"; };
+		DD3EE8E4190E765800537B6C /* CDVLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocalStorage.h; path = ../CordovaLib/Classes/CDVLocalStorage.h; sourceTree = "<group>"; };
+		DD3EE8E5190E765800537B6C /* CDVLocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocalStorage.m; path = ../CordovaLib/Classes/CDVLocalStorage.m; sourceTree = "<group>"; };
+		DD3EE8E6190E765800537B6C /* CDVPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVPlugin.h; path = ../CordovaLib/Classes/CDVPlugin.h; sourceTree = "<group>"; };
+		DD3EE8E7190E765800537B6C /* CDVPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVPlugin.m; path = ../CordovaLib/Classes/CDVPlugin.m; sourceTree = "<group>"; };
+		DD3EE8E8190E765800537B6C /* CDVPluginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVPluginResult.h; path = ../CordovaLib/Classes/CDVPluginResult.h; sourceTree = "<group>"; };
+		DD3EE8E9190E765800537B6C /* CDVPluginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVPluginResult.m; path = ../CordovaLib/Classes/CDVPluginResult.m; sourceTree = "<group>"; };
+		DD3EE8EA190E765800537B6C /* CDVScreenOrientationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVScreenOrientationDelegate.h; path = ../CordovaLib/Classes/CDVScreenOrientationDelegate.h; sourceTree = "<group>"; };
+		DD3EE8EB190E765800537B6C /* CDVShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVShared.h; path = ../CordovaLib/Classes/CDVShared.h; sourceTree = "<group>"; };
+		DD3EE8EC190E765800537B6C /* CDVShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVShared.m; path = ../CordovaLib/Classes/CDVShared.m; sourceTree = "<group>"; };
+		DD3EE8ED190E765800537B6C /* CDVTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVTimer.h; path = ../CordovaLib/Classes/CDVTimer.h; sourceTree = "<group>"; };
+		DD3EE8EE190E765800537B6C /* CDVTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVTimer.m; path = ../CordovaLib/Classes/CDVTimer.m; sourceTree = "<group>"; };
+		DD3EE8EF190E765800537B6C /* CDVURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVURLProtocol.h; path = ../CordovaLib/Classes/CDVURLProtocol.h; sourceTree = "<group>"; };
+		DD3EE8F0190E765800537B6C /* CDVURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVURLProtocol.m; path = ../CordovaLib/Classes/CDVURLProtocol.m; sourceTree = "<group>"; };
+		DD3EE8F1190E765800537B6C /* CDVUserAgentUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVUserAgentUtil.h; path = ../CordovaLib/Classes/CDVUserAgentUtil.h; sourceTree = "<group>"; };
+		DD3EE8F2190E765800537B6C /* CDVUserAgentUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVUserAgentUtil.m; path = ../CordovaLib/Classes/CDVUserAgentUtil.m; sourceTree = "<group>"; };
+		DD3EE8F3190E765800537B6C /* CDVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVViewController.h; path = ../CordovaLib/Classes/CDVViewController.h; sourceTree = "<group>"; };
+		DD3EE8F4190E765800537B6C /* CDVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVViewController.m; path = ../CordovaLib/Classes/CDVViewController.m; sourceTree = "<group>"; };
+		DD3EE8F5190E765800537B6C /* CDVWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVWebViewDelegate.h; path = ../CordovaLib/Classes/CDVWebViewDelegate.h; sourceTree = "<group>"; };
+		DD3EE8F6190E765800537B6C /* CDVWebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVWebViewDelegate.m; path = ../CordovaLib/Classes/CDVWebViewDelegate.m; sourceTree = "<group>"; };
+		DD3EE8F7190E765800537B6C /* CDVWhitelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVWhitelist.h; path = ../CordovaLib/Classes/CDVWhitelist.h; sourceTree = "<group>"; };
+		DD3EE8F8190E765800537B6C /* CDVWhitelist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVWhitelist.m; path = ../CordovaLib/Classes/CDVWhitelist.m; sourceTree = "<group>"; };
+		DD3EE8F9190E765800537B6C /* NSArray+Comparisons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Comparisons.h"; path = "../CordovaLib/Classes/NSArray+Comparisons.h"; sourceTree = "<group>"; };
+		DD3EE8FA190E765800537B6C /* NSArray+Comparisons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Comparisons.m"; path = "../CordovaLib/Classes/NSArray+Comparisons.m"; sourceTree = "<group>"; };
+		DD3EE8FB190E765800537B6C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../CordovaLib/Classes/NSData+Base64.h"; sourceTree = "<group>"; };
+		DD3EE8FC190E765800537B6C /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../CordovaLib/Classes/NSData+Base64.m"; sourceTree = "<group>"; };
+		DD3EE8FD190E765800537B6C /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Extensions.h"; path = "../CordovaLib/Classes/NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		DD3EE8FE190E765800537B6C /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Extensions.m"; path = "../CordovaLib/Classes/NSDictionary+Extensions.m"; sourceTree = "<group>"; };
+		DD3EE8FF190E765800537B6C /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+QueueAdditions.h"; path = "../CordovaLib/Classes/NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		DD3EE900190E765800537B6C /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+QueueAdditions.m"; path = "../CordovaLib/Classes/NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		DD3EE901190E765800537B6C /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Extensions.h"; path = "../CordovaLib/Classes/UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		DD3EE902190E765800537B6C /* UIDevice+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+Extensions.m"; path = "../CordovaLib/Classes/UIDevice+Extensions.m"; sourceTree = "<group>"; };
+		DD3EE920190E768C00537B6C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Robodova/Classes/AppDelegate.h; sourceTree = "<group>"; };
+		DD3EE921190E768C00537B6C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Robodova/Classes/AppDelegate.m; sourceTree = "<group>"; };
+		DD3EE922190E768C00537B6C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../Robodova/Classes/MainViewController.h; sourceTree = "<group>"; };
+		DD3EE923190E768C00537B6C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../Robodova/Classes/MainViewController.m; sourceTree = "<group>"; };
+		DD3EE924190E768C00537B6C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = ../Robodova/Classes/MainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD3EE8A9190E760B00537B6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3EE8B0190E760B00537B6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD3EE8B9190E760C00537B6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3EE8BE190E760C00537B6C /* XCTest.framework in Frameworks */,
+				DD3EE8C4190E760C00537B6C /* libRobodova.a in Frameworks */,
+				DD3EE8C1190E760C00537B6C /* UIKit.framework in Frameworks */,
+				DD3EE8BF190E760C00537B6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD3EE8A3190E760B00537B6C = {
+			isa = PBXGroup;
+			children = (
+				DD3EE917190E765F00537B6C /* Robodova_Classes */,
+				DD3EE8D5190E763D00537B6C /* CordovaLib_Classes */,
+				DD3EE8B1190E760B00537B6C /* RobodovaLib */,
+				DD3EE8C5190E760C00537B6C /* RobodovaLibTests */,
+				DD3EE8AE190E760B00537B6C /* Frameworks */,
+				DD3EE8AD190E760B00537B6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD3EE8AD190E760B00537B6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8AC190E760B00537B6C /* libRobodova.a */,
+				DD3EE8BC190E760C00537B6C /* RobodovaLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD3EE8AE190E760B00537B6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8AF190E760B00537B6C /* Foundation.framework */,
+				DD3EE8BD190E760C00537B6C /* XCTest.framework */,
+				DD3EE8C0190E760C00537B6C /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD3EE8B1190E760B00537B6C /* RobodovaLib */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8B2190E760B00537B6C /* Supporting Files */,
+			);
+			path = RobodovaLib;
+			sourceTree = "<group>";
+		};
+		DD3EE8B2190E760B00537B6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8B3190E760B00537B6C /* RobodovaLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD3EE8C5190E760C00537B6C /* RobodovaLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8C6190E760C00537B6C /* Supporting Files */,
+			);
+			path = RobodovaLibTests;
+			sourceTree = "<group>";
+		};
+		DD3EE8C6190E760C00537B6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8C7190E760C00537B6C /* RobodovaLibTests-Info.plist */,
+				DD3EE8C8190E760C00537B6C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD3EE8D5190E763D00537B6C /* CordovaLib_Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE8D6190E765800537B6C /* CDV.h */,
+				DD3EE8D7190E765800537B6C /* CDVAvailability.h */,
+				DD3EE8D8190E765800537B6C /* CDVCommandDelegate.h */,
+				DD3EE8D9190E765800537B6C /* CDVCommandDelegateImpl.h */,
+				DD3EE8DA190E765800537B6C /* CDVCommandDelegateImpl.m */,
+				DD3EE8DB190E765800537B6C /* CDVCommandQueue.h */,
+				DD3EE8DC190E765800537B6C /* CDVCommandQueue.m */,
+				DD3EE8DD190E765800537B6C /* CDVConfigParser.h */,
+				DD3EE8DE190E765800537B6C /* CDVConfigParser.m */,
+				DD3EE8DF190E765800537B6C /* CDVDebug.h */,
+				DD3EE8E0190E765800537B6C /* CDVInvokedUrlCommand.h */,
+				DD3EE8E1190E765800537B6C /* CDVInvokedUrlCommand.m */,
+				DD3EE8E2190E765800537B6C /* CDVJSON.h */,
+				DD3EE8E3190E765800537B6C /* CDVJSON.m */,
+				DD3EE8E4190E765800537B6C /* CDVLocalStorage.h */,
+				DD3EE8E5190E765800537B6C /* CDVLocalStorage.m */,
+				DD3EE8E6190E765800537B6C /* CDVPlugin.h */,
+				DD3EE8E7190E765800537B6C /* CDVPlugin.m */,
+				DD3EE8E8190E765800537B6C /* CDVPluginResult.h */,
+				DD3EE8E9190E765800537B6C /* CDVPluginResult.m */,
+				DD3EE8EA190E765800537B6C /* CDVScreenOrientationDelegate.h */,
+				DD3EE8EB190E765800537B6C /* CDVShared.h */,
+				DD3EE8EC190E765800537B6C /* CDVShared.m */,
+				DD3EE8ED190E765800537B6C /* CDVTimer.h */,
+				DD3EE8EE190E765800537B6C /* CDVTimer.m */,
+				DD3EE8EF190E765800537B6C /* CDVURLProtocol.h */,
+				DD3EE8F0190E765800537B6C /* CDVURLProtocol.m */,
+				DD3EE8F1190E765800537B6C /* CDVUserAgentUtil.h */,
+				DD3EE8F2190E765800537B6C /* CDVUserAgentUtil.m */,
+				DD3EE8F3190E765800537B6C /* CDVViewController.h */,
+				DD3EE8F4190E765800537B6C /* CDVViewController.m */,
+				DD3EE8F5190E765800537B6C /* CDVWebViewDelegate.h */,
+				DD3EE8F6190E765800537B6C /* CDVWebViewDelegate.m */,
+				DD3EE8F7190E765800537B6C /* CDVWhitelist.h */,
+				DD3EE8F8190E765800537B6C /* CDVWhitelist.m */,
+				DD3EE8F9190E765800537B6C /* NSArray+Comparisons.h */,
+				DD3EE8FA190E765800537B6C /* NSArray+Comparisons.m */,
+				DD3EE8FB190E765800537B6C /* NSData+Base64.h */,
+				DD3EE8FC190E765800537B6C /* NSData+Base64.m */,
+				DD3EE8FD190E765800537B6C /* NSDictionary+Extensions.h */,
+				DD3EE8FE190E765800537B6C /* NSDictionary+Extensions.m */,
+				DD3EE8FF190E765800537B6C /* NSMutableArray+QueueAdditions.h */,
+				DD3EE900190E765800537B6C /* NSMutableArray+QueueAdditions.m */,
+				DD3EE901190E765800537B6C /* UIDevice+Extensions.h */,
+				DD3EE902190E765800537B6C /* UIDevice+Extensions.m */,
+			);
+			name = CordovaLib_Classes;
+			sourceTree = "<group>";
+		};
+		DD3EE917190E765F00537B6C /* Robodova_Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD3EE920190E768C00537B6C /* AppDelegate.h */,
+				DD3EE921190E768C00537B6C /* AppDelegate.m */,
+				DD3EE922190E768C00537B6C /* MainViewController.h */,
+				DD3EE923190E768C00537B6C /* MainViewController.m */,
+				DD3EE924190E768C00537B6C /* MainViewController.xib */,
+			);
+			name = Robodova_Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD3EE8AB190E760B00537B6C /* RobodovaLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3EE8CF190E760C00537B6C /* Build configuration list for PBXNativeTarget "RobodovaLib" */;
+			buildPhases = (
+				DD3EE8A8190E760B00537B6C /* Sources */,
+				DD3EE8A9190E760B00537B6C /* Frameworks */,
+				DD3EE8AA190E760B00537B6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RobodovaLib;
+			productName = RobodovaLib;
+			productReference = DD3EE8AC190E760B00537B6C /* libRobodova.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DD3EE8BB190E760C00537B6C /* RobodovaLibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3EE8D2190E760C00537B6C /* Build configuration list for PBXNativeTarget "RobodovaLibTests" */;
+			buildPhases = (
+				DD3EE8B8190E760C00537B6C /* Sources */,
+				DD3EE8B9190E760C00537B6C /* Frameworks */,
+				DD3EE8BA190E760C00537B6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD3EE8C3190E760C00537B6C /* PBXTargetDependency */,
+			);
+			name = RobodovaLibTests;
+			productName = RobodovaLibTests;
+			productReference = DD3EE8BC190E760C00537B6C /* RobodovaLibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD3EE8A4190E760B00537B6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Takao Nakaguchi";
+			};
+			buildConfigurationList = DD3EE8A7190E760B00537B6C /* Build configuration list for PBXProject "RobodovaLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DD3EE8A3190E760B00537B6C;
+			productRefGroup = DD3EE8AD190E760B00537B6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD3EE8AB190E760B00537B6C /* RobodovaLib */,
+				DD3EE8BB190E760C00537B6C /* RobodovaLibTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD3EE8BA190E760C00537B6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3EE8CA190E760C00537B6C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD3EE8A8190E760B00537B6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3EE925190E768C00537B6C /* AppDelegate.m in Sources */,
+				DD3EE90B190E765800537B6C /* CDVShared.m in Sources */,
+				DD3EE905190E765800537B6C /* CDVConfigParser.m in Sources */,
+				DD3EE903190E765800537B6C /* CDVCommandDelegateImpl.m in Sources */,
+				DD3EE911190E765800537B6C /* CDVWhitelist.m in Sources */,
+				DD3EE909190E765800537B6C /* CDVPlugin.m in Sources */,
+				DD3EE90F190E765800537B6C /* CDVViewController.m in Sources */,
+				DD3EE908190E765800537B6C /* CDVLocalStorage.m in Sources */,
+				DD3EE90D190E765800537B6C /* CDVURLProtocol.m in Sources */,
+				DD3EE904190E765800537B6C /* CDVCommandQueue.m in Sources */,
+				DD3EE907190E765800537B6C /* CDVJSON.m in Sources */,
+				DD3EE926190E768C00537B6C /* MainViewController.m in Sources */,
+				DD3EE914190E765800537B6C /* NSDictionary+Extensions.m in Sources */,
+				DD3EE915190E765800537B6C /* NSMutableArray+QueueAdditions.m in Sources */,
+				DD3EE90C190E765800537B6C /* CDVTimer.m in Sources */,
+				DD3EE910190E765800537B6C /* CDVWebViewDelegate.m in Sources */,
+				DD3EE916190E765800537B6C /* UIDevice+Extensions.m in Sources */,
+				DD3EE912190E765800537B6C /* NSArray+Comparisons.m in Sources */,
+				DD3EE90E190E765800537B6C /* CDVUserAgentUtil.m in Sources */,
+				DD3EE906190E765800537B6C /* CDVInvokedUrlCommand.m in Sources */,
+				DD3EE90A190E765800537B6C /* CDVPluginResult.m in Sources */,
+				DD3EE913190E765800537B6C /* NSData+Base64.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD3EE8B8190E760C00537B6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD3EE8C3190E760C00537B6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD3EE8AB190E760B00537B6C /* RobodovaLib */;
+			targetProxy = DD3EE8C2190E760C00537B6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD3EE8C8190E760C00537B6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3EE8C9190E760C00537B6C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD3EE8CD190E760C00537B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DD3EE8CE190E760C00537B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD3EE8D0190E760C00537B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RobodovaLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RobodovaLib/RobodovaLib-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/nakaguchi/work/robodova/platforms/ios/CordovaLib/Classes,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Robodova;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DD3EE8D1190E760C00537B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RobodovaLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RobodovaLib/RobodovaLib-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/nakaguchi/work/robodova/platforms/ios/CordovaLib/Classes,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Robodova;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DD3EE8D3190E760C00537B6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RobodovaLib/RobodovaLib-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RobodovaLibTests/RobodovaLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DD3EE8D4190E760C00537B6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RobodovaLib/RobodovaLib-Prefix.pch";
+				INFOPLIST_FILE = "RobodovaLibTests/RobodovaLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD3EE8A7190E760B00537B6C /* Build configuration list for PBXProject "RobodovaLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3EE8CD190E760C00537B6C /* Debug */,
+				DD3EE8CE190E760C00537B6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD3EE8CF190E760C00537B6C /* Build configuration list for PBXNativeTarget "RobodovaLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3EE8D0190E760C00537B6C /* Debug */,
+				DD3EE8D1190E760C00537B6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DD3EE8D2190E760C00537B6C /* Build configuration list for PBXNativeTarget "RobodovaLibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3EE8D3190E760C00537B6C /* Debug */,
+				DD3EE8D4190E760C00537B6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD3EE8A4190E760B00537B6C /* Project object */;
+}
