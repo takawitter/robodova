@@ -42,6 +42,18 @@ public class CDVPluginResult extends NSObject{
 	public native static CDVPluginResult resultWithStatus(
 			CDVCommandStatus status, NSArray<?> message);
 
+	@Method(selector="resultWithStatus:messageAsInt:")
+	public native static CDVPluginResult resultWithStatus(
+			CDVCommandStatus status, int message);
+
+	@Method(selector="resultWithStatus:messageAsDouble:")
+	public native static CDVPluginResult resultWithStatus(
+			CDVCommandStatus status, double message);
+
+	@Method(selector="resultWithStatus:messageAsBool:")
+	public native static CDVPluginResult resultWithStatus(
+			CDVCommandStatus status, boolean message);
+
 	@Method(selector="resultWithStatus:messageAsDictionary:")
 	public native static CDVPluginResult resultWithStatus(
 			CDVCommandStatus status, NSDictionary<?, ?> message);
