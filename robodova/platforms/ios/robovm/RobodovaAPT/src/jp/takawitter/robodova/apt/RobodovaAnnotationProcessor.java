@@ -185,11 +185,11 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 			String convMethod = getConvertToNSMethod(ee.getReturnType());
 			if(convMethod != null){
 				p.println("%s(instance.%s(", convMethod, ee.getSimpleName()).indent();
-				writeArguments(p, ee.getParameters());
+				writeArguments(p, ee, ee.getParameters());
 				p.unindent().println("))");
 			} else{
 				p.println("instance.%s(", ee.getSimpleName()).indent();
-				writeArguments(p, ee.getParameters());
+				writeArguments(p, ee, ee.getParameters());
 				p.unindent().println(")");
 			}
 			if(!voidReturn){
@@ -226,14 +226,20 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 		}
 	}
 
-	private void writeArguments(IndentedPrinter p,
-			List<? extends VariableElement> arguments){
-		int n = arguments.size();
+	private void writeArguments(final IndentedPrinter p,
+			ExecutableElement ee, List<? extends VariableElement> arguments){
+		final int n = arguments.size();
 		for(int i = 0; i < n; i++){
+			VariableElement ve = arguments.get(i);
+			TypeMirror tm = ve.asType();
+			String m = "";
+			if(tm.toString().equals("java.lang.String")){
+				m = ".toString()";
+			}
 			p.println(
-					"command.getArguments().get(" + i + ").toString()" +
-					((i != (n - 1)) ? "," : "")
-					);
+					"command.getArguments().get(" + i + ")" + m +
+						((i != (n - 1)) ? "," : "")
+						);
 		}
 	}
 
