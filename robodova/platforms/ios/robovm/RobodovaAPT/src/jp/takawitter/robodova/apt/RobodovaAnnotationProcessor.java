@@ -38,6 +38,8 @@ import javax.lang.model.type.TypeMirror;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.JavaFileObject;
 
+import jp.takawitter.robodova.annotation.AfterInvocation;
+import jp.takawitter.robodova.annotation.BeforeInvocation;
 import jp.takawitter.robodova.annotation.PluginClass;
 import jp.takawitter.robodova.annotation.PluginMethod;
 
@@ -74,17 +76,21 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 				IndentedPrinter p = new IndentedPrinter(w);
 				p.println("package " + packageName + ";");
 				p.println();
+				p.println("import jp.takawitter.robodova.cordova.CDVCommandDelegate;");
 				p.println("import jp.takawitter.robodova.cordova.CDVCommandStatus;");
 				p.println("import jp.takawitter.robodova.cordova.CDVInvokedUrlCommand;");
 				p.println("import jp.takawitter.robodova.cordova.CDVPluginResult;");
-				p.println("import jp.takawitter.robodova.plugin.RobodovaPlugin;");
+				p.println("import jp.takawitter.robodova.plugin.RobodovaPlugin_;");
 				p.println("import org.robovm.objc.annotation.CustomClass;");
 				p.println("import org.robovm.objc.annotation.Method;");
 				p.println();
 				p.println("/* This class is auto generated. Don't rewrite by yourself. */");
 				p.println("@CustomClass(\"%s\")", pluginClass.value());
-				p.println("public class %s extends RobodovaPlugin{", className);
+				p.println("public class %s extends RobodovaPlugin_{", className);
+
+				writeListMethodsMethod(p, classElement);
 				writeMethods(p, classElement);
+
 				p.println();
 				p.indent().println("private synchronized void init(){");
 				p.indent().println(
@@ -105,7 +111,45 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 		}
 	}
 
+	private void writeListMethodsMethod(IndentedPrinter p, TypeElement classElement){
+		p.indent();
+		p.println("@Method(selector=\"__listMethods__:\")");
+		p.println("public void listMethods(CDVInvokedUrlCommand command){").indent();
+		p.println("StringBuilder b = new StringBuilder();");
+		p.println("Class<?> clazz = %s.class;", classElement.getSimpleName());
+		p.println("while(!clazz.equals(Object.class)){").indent();
+		p.println("for(java.lang.reflect.Method m : clazz.getDeclaredMethods()){").indent();
+		p.println("if((m.getModifiers() & java.lang.reflect.Modifier.PUBLIC) == 0) continue;");
+		p.println("if(m.getAnnotation(jp.takawitter.robodova.annotation.PluginMethod.class) != null){").indent();
+		p.println("if(b.length() > 0){ b.append(\",\"); }");
+		p.println("b.append(\"\\\"\").append(m.getName()).append(\"\\\"\");");
+		p.unindent().println("}");
+		p.unindent().println("}");
+		p.println("clazz = clazz.getSuperclass();");
+		p.unindent().println("}");
+		p.println("String ret = \"[\" + b.toString() + \"]\";");
+		p.println("getCommandDelegate().sendPluginResult(").indent();
+		p.println("CDVPluginResult.resultWithStatus(CDVCommandStatus.OK, ").indent();
+		p.println("ret),");
+		p.println("command.getCallbackId());");
+		p.unindent().unindent().unindent().println("}");
+		p.unindent();
+	}
+	
 	private void writeMethods(IndentedPrinter p, TypeElement classElement){
+		String beforeMethod = null, afterMethod = null;
+		for(Element e : classElement.getEnclosedElements()){
+			if(!(e instanceof ExecutableElement)) continue;
+			ExecutableElement ee = (ExecutableElement)e;
+			BeforeInvocation bi = ee.getAnnotation(BeforeInvocation.class);
+			if(bi != null){
+				beforeMethod = ee.getSimpleName().toString();
+			}
+			AfterInvocation ai = ee.getAnnotation(AfterInvocation.class);
+			if(ai != null){
+				afterMethod = ee.getSimpleName().toString();
+			}
+		}
 		for(Element e : classElement.getEnclosedElements()){
 			if(!(e instanceof ExecutableElement)) continue;
 			ExecutableElement ee = (ExecutableElement)e;
@@ -122,15 +166,19 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 					e.getSimpleName()
 					).indent();
 			p.println("init();");
+			p.println("final CDVCommandDelegate delegate = getCommandDelegate();");
 			if(pm.async()){
-				p.println("getCommandDelegate().runInBackground(new Runnable() {").indent();
+				p.println("delegate.runInBackground(new Runnable() {").indent();
 				p.println("@Override");
 				p.println("public void run() {").indent();
+			}
+			if(beforeMethod != null){
+				p.println("instance.%s(command, delegate);", beforeMethod);
 			}
 			p.println("try{").indent();
 			boolean voidReturn = ee.getReturnType().getKind().equals(TypeKind.VOID);
 			if(!voidReturn){
-				p.println("getCommandDelegate().sendPluginResult(").indent();
+				p.println("delegate.sendPluginResult(").indent();
 				p.println("CDVPluginResult.resultWithStatus(").indent();
 				p.println("CDVCommandStatus.OK,");
 			}
@@ -149,22 +197,26 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 				p.println("),");
 			} else{
 				p.println(";");
-				p.println("getCommandDelegate().sendPluginResult(").indent();
+				p.println("delegate.sendPluginResult(").indent();
 				p.println("CDVPluginResult.resultWithStatus(").indent();
 				p.println("CDVCommandStatus.OK");
 				p.unindent().println("),");
 			}
 			p.println("command.getCallbackId());").unindent().unindent();
-			p.println("} catch(Exception e){").indent();
-			p.println("if(e instanceof RuntimeException){").indent();
-			p.println("throw (RuntimeException)e;");
-			p.unindent().println("}");
-			p.println("getCommandDelegate().sendPluginResult(").indent();
+			p.println("} catch(Throwable e){").indent();
+//			p.println("if(e instanceof RuntimeException){").indent();
+//			p.println("throw (RuntimeException)e;");
+//			p.unindent().println("}");
+			p.println("e.printStackTrace();");
+			p.println("delegate.sendPluginResult(").indent();
 			p.println("CDVPluginResult.resultWithStatus(").indent();
 			p.println("CDVCommandStatus.Error, e.toString().replaceAll(\"\\\"\", \"\\\\\\\"\").replaceAll(\"\\r\", \"\\\\r\").replaceAll(\"\\n\", \"\\\\n\")");
 			p.unindent().println("),");
 			p.println("command.getCallbackId());").unindent();
 			p.unindent().println("}");
+			if(afterMethod != null){
+				p.println("instance.%s(command, delegate);", afterMethod);
+			}
 			if(pm.async()){
 				p.unindent().println("}");
 				p.unindent().println("});");
@@ -193,7 +245,15 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 			}
 			@Override
 			public String visitPrimitive(PrimitiveType t, Void p) {
-				return "convert";
+				switch(t.getKind()){
+					case INT:
+					case BOOLEAN:
+					case DOUBLE:
+						// no conversion needed
+						return null;
+					default:
+						return "convert";
+				}
 			}
 			@Override
 			public String visitDeclared(DeclaredType t, Void p) {
@@ -205,7 +265,8 @@ public class RobodovaAnnotationProcessor extends AbstractProcessor {
 					} else if(name.equals("java.util.Collection")){
 						return "convertCollection";
 					} else if(name.equals("java.lang.String")){
-						return null; // no conversion needed
+						// no conversion needed
+						return null; 
 					} else{
 						String m = te.getSuperclass().accept(this, null);
 						if(m == null){

@@ -15,7 +15,7 @@ import org.robovm.apple.foundation.NSNumber;
 import org.robovm.apple.foundation.NSObject;
 import org.robovm.apple.foundation.NSString;
 
-public class RobodovaPlugin extends CDVPlugin{
+public class RobodovaPlugin_ extends CDVPlugin{
 	protected NSArray<?> convertCollection(Collection<?> value){
 		Collection<NSObject> ret = new ArrayList<NSObject>();
 		for(Object v : value){

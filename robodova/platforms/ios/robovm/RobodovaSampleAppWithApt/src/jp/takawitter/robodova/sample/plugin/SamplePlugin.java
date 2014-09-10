@@ -18,11 +18,25 @@ package jp.takawitter.robodova.sample.plugin;
 import java.util.Arrays;
 import java.util.List;
 
+import jp.takawitter.robodova.annotation.AfterInvocation;
+import jp.takawitter.robodova.annotation.BeforeInvocation;
 import jp.takawitter.robodova.annotation.PluginClass;
 import jp.takawitter.robodova.annotation.PluginMethod;
+import jp.takawitter.robodova.cordova.CDVCommandDelegate;
+import jp.takawitter.robodova.cordova.CDVInvokedUrlCommand;
 
 @PluginClass("RDVSamplePlugin")
 public class SamplePlugin{
+	@BeforeInvocation
+	public void before(CDVInvokedUrlCommand command, CDVCommandDelegate delegate){
+		System.out.println("before calling " + command.getMethodName());
+	}
+
+	@AfterInvocation
+	public void after(CDVInvokedUrlCommand command, CDVCommandDelegate delegate){
+		System.out.println("after calling " + command.getMethodName());
+	}
+
 	@PluginMethod
 	public String hello(String name){
 		return "hello " + name;
